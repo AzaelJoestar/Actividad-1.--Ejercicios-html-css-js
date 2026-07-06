@@ -40,16 +40,14 @@ Eventos en botones.
 Condiciones en JavaScript.
 
 ### Ejercicio 12
-Ciclos en JavaScript.
+
 
 ### Ejercicio 13
-Funciones básicas en JavaScript.
+
 
 ### Ejercicio 14
-Interacción entre HTML, CSS y JS.
 
 ### Ejercicio 15
-Proyecto final integrando lo aprendido.
 
 ---
 
