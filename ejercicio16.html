@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <h1>Calculadora</h1>
+
+<input type="text" id="numero1" placeholder="Número 1">
+<input type="text" id="numero2" placeholder="Número 2">
+
+<br><br>
+
+<button onclick="calcularOperacion('suma')">Suma</button>
+<button onclick="calcularOperacion('resta')">Resta</button>
+<button onclick="calcularOperacion('multiplicacion')">Multiplicación</button>
+<button onclick="calcularOperacion('division')">División</button>
+
+<br><br>
+
+<input type="text" id="resultado" readonly>
+
+<script>
+const sumar = (a, b) => a + b;
+const restar = (a, b) => a - b;
+const multiplicar = (a, b) => a * b;
+const dividir = (a, b) => b !== 0 ? a / b : null;
+
+const calcularOperacion = (op) => {
+let n1 = parseFloat(document.getElementById("numero1").value);
+let n2 = parseFloat(document.getElementById("numero2").value);
+
+if (isNaN(n1) || isNaN(n2)) {
+Swal.fire("Error", "Ingresa números válidos", "error");
+return;
+}
+
+let resultado = 0;
+
+if (op === "suma") resultado = sumar(n1, n2);
+if (op === "resta") resultado = restar(n1, n2);
+if (op === "multiplicacion") resultado = multiplicar(n1, n2);
+if (op === "division") {
+if (n2 === 0) {
+Swal.fire("Error", "No se puede dividir entre 0", "error");
+return;
+}
+resultado = dividir(n1, n2);
+}
+
+document.getElementById("resultado").value = resultado;
+};
+</script>
+</body>
+</html>
